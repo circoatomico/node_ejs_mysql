@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- Automaticamente o express já determina que os arquivos estáticos estarão em public... a barra no início é obrigatória -->
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+
+    <h1>Bem vindo amigo</h1>
+
+    <img src="/img/orange.jpeg">
+
+    <!-- Estrutura condicional -->
+    <% if(msg == true){ %>
+        <h3>Isso é uma msg de erro</h3>
+    <% } else { %>
+        <h3>Nenhum erro encontrado</h3>
+    <% } %>
+
+
+    <!-- Estruturas de repetição -->
+    <% produtos.forEach(function(produto) { %>
+        <h3>Produto: <%= produto.nome %></h3>
+        <h3>Preço R$ <%= produto.preco %></h3>
+        <img style="width: 100px;" src="<%= produto.imagem %>">
+        <hr>
+    <% }) %>
+
+</body>
+</html>
