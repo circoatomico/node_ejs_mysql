@@ -8,13 +8,19 @@
 <%- include ('./partials/navbar.ejs') %>
 
     <div class="container">
-        
-        <hr>        
-        <h1>Perguntas</h1>
-        <hr>
 
-        
-        <a href="/perguntar" class="btn btn-primary">Perguntar</a>
+        <div class="text-center mt-3">
+            <a class="mx-auto" style="text-decoration: none !important;" href="/perguntar">
+                <button class="mx-auto text-center btn rounded btn-primary">
+                    <img src="/img/questao.png" style="height: 60px;" alt="questão"> 
+                    <span class="h4">
+                        <strong>
+                            I got a question
+                        </strong>
+                    </span>
+                </button>
+            </a> 
+        </div>
         
         <br>
         <br>
@@ -28,7 +34,10 @@
 
                 <div class="card-footer">
                     <a href="/pergunta/<%= pergunta.id%>">
-                        <button class="btn btn-primary">Responder</button>
+                        <button class="btn btn-primary">
+                            <img src="/img/exclamacao.png" style="height: 25px;" alt="responder"> 
+                            <strong> Reply </strong>
+                        </button>
                     </a>
                 </div>
             </div>

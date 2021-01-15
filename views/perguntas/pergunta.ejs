@@ -7,30 +7,39 @@
 
     <%- include('../partials/navbar.ejs')%>
 
-    <div class="container">
-
-        <hr>
+    <div class="container p-5 text-white">
 
         <h1> <%= pergunta.title %> </h1>
         <p> <%= pergunta.description %> </p>
-        <hr>
+        <br>
         <form method="POST" action="/responder">
-            <h3>Responda</h3>
-            <label>Resposta:</label>
-            <textarea placeholder="Digite aqui sua resposta" class="form-control" name="answer"></textarea>
+            <h3>Reply this question</h3>
+            <textarea placeholder="type here" class="mt-2 form-control" name="answer"></textarea>
             <br>
             <input type="hidden" hidden name="pergunta_id" value="<%= pergunta.id %>">
-            <button class="btn btn-primary" type="submit">Responder</button>
+            <button class="btn btn-primary" type="submit"><strong>Reply</strong></button>
         </form>
         <hr>
+ 
+    </div>
 
-        <h3>Respostas</h3>
+    <div class="container p-5 text-white">
+
+        <h3>Older Replies</h3>
 
         <% respostas.forEach(resposta => { %>
 
-            <div class="card">
+            <div class="card text-white bg-dark">
                 <div class="card-body">
-                    <p><%= resposta.answer %></p>
+                    <div class="row">                        
+                        <div class="col-1">
+                            <img class="img-thumbnail" src="/img/orange.jpeg" style="display: inline; height: 60px;">
+                        </div>
+
+                        <div class="col-11">
+                            <p><strong>The Annoying orange</strong><br><span><%= resposta.answer %></span></p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <br>
